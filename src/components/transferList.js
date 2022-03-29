@@ -16,10 +16,18 @@ function intersection(a, b) {
   return a.filter((value) => b.indexOf(value) !== -1);
 }
 
-export const TransferList = () => {
+export const TransferList = ({nameElement, data}) => {
   const [checked, setChecked] = React.useState([]);
-  const [left, setLeft] = React.useState([0, 1, 2, 3]);
-  const [right, setRight] = React.useState([4, 5, 6, 7, 8, 9 ,10]);
+  const [left, setLeft] = React.useState([]);
+  const [right, setRight] = React.useState([]);
+
+  React.useEffect(() => {
+    setLeft(data);
+  }, [data])
+
+  React.useEffect(() => {
+    document.getElementById(nameElement).value = right.join(";");
+  }, [right])
 
   const leftChecked = intersection(checked, left);
   const rightChecked = intersection(checked, right);
@@ -82,7 +90,7 @@ export const TransferList = () => {
                   }}
                 />
               </ListItemIcon>
-              <ListItemText id={labelId} primary={`List item ${value + 1}`} />
+              <ListItemText id={labelId} primary={`${value}`} />
             </ListItem>
           );
         })}

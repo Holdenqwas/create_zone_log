@@ -1,10 +1,10 @@
 <plugin>
-  <meta name="application-name" content="Rename trajectory" />
-  <meta name="author" content="Roxar and Tatneft Software Solutions" />
-  <meta name="description" content="Change name current trajectory on new" />
+  <meta name="application-name" content="Create Zone log" />
+  <meta name="author" content="Tatneft Software Solutions" />
+  <meta name="description" content="Create zone log usig fault picks and wedging" />
   <meta name="uipy-timeout" content="600000" />
   <meta name="window-size" content="600x600" />
-  <meta name="hide-message-pane" content="true"/>
+  <meta name="hide-message-pane" content="false"/>
   <meta name="refresh-after-run" content="false" />
   <meta name="internal-plugin-interoperability" content="true"/>
   <meta name="show-idle-dialog-on-run" content="true" />

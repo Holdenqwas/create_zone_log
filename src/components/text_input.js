@@ -6,8 +6,8 @@ export const ValidationTextFields = () => {
   const [term, setTerm] = useState('ZONE_LOG');
 
   const handleChange = (e) => {
-    const term = e.target.value;
-    setTerm(term); 
+    setTerm(e.target.value); 
+    document.getElementById('name_zone_log').value = e.target.value;
   };
 
   return (

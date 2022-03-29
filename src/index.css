@@ -11,3 +11,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#name_collection {
+  display: none;
+}
+
+#name_well_picks_set {
+  display: none;
+}
+
+#name_horizons {
+  display: none;
+}
+
+#name_faults {
+  display: none;
+}
+
+#name_zone_log {
+  display: none;
+}
+
+#name_traj {
+  display: none;
+}
+
+#name_log_run {
+  display: none;
+}

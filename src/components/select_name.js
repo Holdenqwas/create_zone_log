@@ -5,11 +5,14 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-export const SelectName = ({nameLabel, data}) => {
+export const SelectName = ({nameLabel, nameElement, data}) => {
   const [name, setName] = React.useState('');
-
+  if (!data) {
+    data = ["Undef"];
+  }
   const handleChange = (event) => {
     setName(event.target.value);
+    document.getElementById(nameElement).value = event.target.value;
   };
   return (
     <div>
@@ -26,7 +29,7 @@ export const SelectName = ({nameLabel, data}) => {
         >
           {data.map((name) => {
             return (
-              <MenuItem value={name}>{name}</MenuItem>
+              <MenuItem key={name} value={name}>{name}</MenuItem>
             )
           })}
         </Select>
