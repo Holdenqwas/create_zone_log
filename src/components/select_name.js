@@ -5,8 +5,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 
-export const SelectName = ({nameLabel, nameElement, data}) => {
-  const [name, setName] = React.useState('');
+export const SelectName = ({nameLabel, nameElement, data, saved_data}) => {
+  if (!saved_data) {
+    saved_data = "";
+  }
+  const [name, setName] = React.useState(saved_data);
   if (!data) {
     data = ["Undef"];
   }

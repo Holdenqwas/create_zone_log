@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export const ValidationTextFields = () => {
-  const [term, setTerm] = useState('ZONE_LOG');
+export const ValidationTextFields = ({saved_data}) => {
+  if (!saved_data)
+  {
+    saved_data='ZONE_LOG';
+  }
+  const [term, setTerm] = useState(saved_data);
 
   const handleChange = (e) => {
     setTerm(e.target.value); 

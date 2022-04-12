@@ -16,14 +16,18 @@ function intersection(a, b) {
   return a.filter((value) => b.indexOf(value) !== -1);
 }
 
-export const TransferList = ({nameElement, data}) => {
+export const TransferList = ({nameElement, data, saved_data}) => {
   const [checked, setChecked] = React.useState([]);
   const [left, setLeft] = React.useState([]);
   const [right, setRight] = React.useState([]);
 
   React.useEffect(() => {
-    setLeft(data);
+    setLeft(data.filter(x => !saved_data.includes(x)));
   }, [data])
+
+  React.useEffect(() => {
+    setRight(saved_data);
+  }, [saved_data])
 
   React.useEffect(() => {
     document.getElementById(nameElement).value = right.join(";");

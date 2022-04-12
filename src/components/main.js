@@ -7,7 +7,7 @@ import Chip from '@material-ui/core/Chip';
 
 
 
-export const Main = () => {
+export const Main = ({saved_data}) => {
     const [list, setList] = React.useState([[],[],[],[],[],[]]);
 
     React.useEffect(() => {
@@ -28,41 +28,48 @@ export const Main = () => {
                 <SelectName
                     nameLabel="Коллекция"
                     nameElement="name_collection"
-                    data={list[0]} />
+                    data={list[0]} 
+                    saved_data={saved_data['name_collection']}/>
             </Grid>
             <Grid item xs={4}>
                 <SelectName
                     nameLabel="Таблица Well picks"
                     nameElement="name_well_picks_set"
-                    data={list[1]} />
+                    data={list[1]} 
+                    saved_data={saved_data['name_well_picks_set']}/>
             </Grid>
             <Grid item xs={4}>
                 <SelectName
                     nameLabel="Траектория"
                     nameElement="name_traj"
-                    data={list[4]} />
+                    data={list[4]} 
+                    saved_data={saved_data['name_traj']}/>
             </Grid>
             <Grid item xs={4}>
                 <SelectName
                     nameLabel="Log run"
                     nameElement="name_log_run"
-                    data={list[5]} />
+                    data={list[5]} 
+                    saved_data={saved_data['name_log_run']}/>
             </Grid>
             <Grid item xs={4}>
-                <ValidationTextFields />
+                <ValidationTextFields 
+                saved_data={saved_data['name_zone_log']}/>
             </Grid>
             <Grid item xs={4}></Grid>
             <Grid item xs={9}>
                 <Chip label="Horizons" variant="outlined" color="primary" />
                 <TransferList 
                     nameElement="name_horizons"
-                    data={list[2]}/>
+                    data={list[2]}
+                    saved_data={saved_data['name_horizons'] ? saved_data['name_horizons'].split(';') : []}/>
             </Grid>
             <Grid item xs={9}>
                 <Chip label="Faults" variant="outlined" color="primary" />
                 <TransferList 
                     nameElement="name_faults"
-                    data={list[3]}/>
+                    data={list[3]}
+                    saved_data={saved_data['name_faults'] ? saved_data['name_faults'].split(';') : []}/>
             </Grid>
         </Grid >
     );
